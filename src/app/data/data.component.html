@@ -1,4 +1,4 @@
-<div class="card my-3 col-12 bg-light">
+<div class="card my-3 col-12 bg-light" *ngIf="country != null">
   <img src="{{country.flags.png}}" class="card-img-top img-fluid" alt="Flag of {{country.name.official}}">
   <div class="card-body">
     <h5 class="card-title text-dark">{{country.name.common}}</h5>

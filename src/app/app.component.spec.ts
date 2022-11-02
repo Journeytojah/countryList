@@ -3,11 +3,12 @@ import { AppComponent } from './app.component';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 describe('AppComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
+            imports: [HttpClientTestingModule, Ng2SearchPipeModule],
             providers: [
                 ApiService
             ],
@@ -33,6 +34,6 @@ describe('AppComponent', () => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector('.content span')?.textContent).toContain('countryList app is running!');
+        expect(compiled.querySelector('.title')?.textContent).toContain('Welcome to countryList!');
     });
 });
